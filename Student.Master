@@ -1,0 +1,83 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Student.master.cs" Inherits="InternalMarkAllotmentSystem.Student" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+        .Main {
+        background-color: #ffc107; /* Yellow background color */
+        padding: 2px;
+        text-align: center;
+        font-size: 24px; /* Adjust the font size as needed */
+        font-weight: bold;
+        }
+        
+
+        .user-info-label {
+        font-weight: bold;
+        margin-left: 700px;
+        }
+
+        #lblName,
+        #lblDept {
+        font-weight: bold;
+        color: #007bff; /* Blue text color, adjust as needed */
+        }
+        footer {
+            width: 100%;
+            margin-top: 120px;
+            background-color: #141414;
+            color: #fff;
+            position: absolute;
+            padding-top:20px;
+            padding-bottom:50px;
+            text-align:center;
+            font-size:30px;
+            font-weight:bold;
+            position: relative;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="Main">
+        <div class="header" style="font-size: 44px;">
+            Welcome Student Portal
+        </div>
+        <div class="student-info-container" >
+            <span class="user-info-label">Name:</span>
+            <asp:Label ID="lblName" runat="server"></asp:Label>
+            <br />
+            <span class="user-info-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Department:</span>
+            <asp:Label ID="lblDept" runat="server"></asp:Label>
+            <br />
+            <br />
+            <br />
+        </div>
+        </div>
+        
+
+&nbsp;<div class="container-fluid text-center" style="margin-left: auto; margin-right: auto;">
+        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" CssClass="navbar" StaticDisplayLevels="2">
+        <Items>
+            <asp:MenuItem Text="Student Activity" Value="Student Activity" NavigateUrl="~/Student_Activity.aspx"></asp:MenuItem>
+            <asp:MenuItem Text="View Mark History" Value="View Mark History" NavigateUrl="~/View_History.aspx"></asp:MenuItem>
+        </Items>
+        </asp:Menu>
+     </div>
+     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+     
+    <footer>
+            Developed By Rushikesh Farkase
+     </footer>
+    </form>
+
+</body>
+
+</html>

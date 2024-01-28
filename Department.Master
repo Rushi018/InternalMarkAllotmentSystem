@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Department.master.cs" Inherits="InternalMarkAllotmentSystem.Department" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <style>
+        .Main {
+            background-color: #ffc107; /* Yellow background color */
+            padding: 2px;
+            text-align: center;
+            font-size: 24px; /* Adjust the font size as needed */
+            font-weight: bold;
+        }
+
+        .user-info-label {
+            font-weight: bold;
+            margin-left: 700px;
+        }
+
+        #lblFId,
+        #lblDeptN {
+            font-weight: bold;
+            color: #007bff; /* Blue text color, adjust as needed */
+        }
+
+        .container-fluid.text-center {
+            margin-left: auto;
+            margin-right: auto;
+            width: 328px;
+        }
+        .center-menu {
+        text-align: center;
+        }
+
+        .center-menu ul {
+        display: inline-block;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        }
+
+        .center-menu li {
+        display: inline;
+        margin-right: 10px; /* Adjust the spacing between menu items as needed */
+        padding-top: 100px;
+        font-size: 24px;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="Main">
+            <div class="header" style="font-size: 44px;">
+                Internal Mark Allotment
+            </div>
+            <div class="faculty-info-container">
+                <span class="user-info-label">Faculty Id:</span>
+                <asp:Label ID="lblFId" runat="server" Text="Label"></asp:Label>
+                <br />
+                <span class="user-info-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Department Name:</span>
+                <asp:Label ID="lblDeptN" runat="server" Text="Label"></asp:Label>
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
+
+        <div class="container-fluid text-center center-menu ">
+            <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
+                <Items>
+                    <asp:MenuItem Text="Mark Allotment" Value="Mark Allotment |" NavigateUrl="DeptMark.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Mark Report" Value="Mark Report" NavigateUrl="depmarkreport.aspx"></asp:MenuItem>
+                </Items>
+            </asp:Menu>
+        </div>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>
